@@ -1,30 +1,32 @@
-# Homework 9 Programming
----------------------------------
+# Homework 10
 
-Please remember that to submit the assignment you will need to the Education drop down menu and select  assignment complete. Once you have marked the assignment as complete you will not be able to edit it again. 
+## Problem 1 - 18 points
+In a file Problem1.java implement a static method with the signature:
 
-Make sure to format and comment your code carefully and correctly based on the style we've been using in class.
+```
+public static int pow(int x, int n);
+```
 
-## Problem 1 - 47 Points
+Your method should **recursively** calculate the value of x^n (x raised to the n power).  You may assume that x and n are both positive integers and you do not have to error check the parameters.
 
-For this problem you will write a java program called *Fail2Ban*.  This program will take two command line arguments: the name of a single log file (such as the one attached to this assignment) and the name of an output file.
+Hint: set up a simple recursion similar to how we setup the factorial recursion in class.
 
-You will read each line of the program in, extract the IP address from the line and determine whether the line is a failed login attempt or valid login attempt.
+Write a main method within Problem1.java that tests the method out on a few different values of x and n.
 
-Look through the *logs_processed.txt* file.  It follows a fairly clear format and indicates "Invalid" whenever a bad attempt is made.  Once you identify the invalid line, the IP address should always be in the same position.  Make use of String's split method to parse the lines.
 
-Keep track of the number of times a particular IP address fails to login.  
+## Problem 2 - 32 points
+In the file Problem2.java implement a static method with the signature:
 
-Your program should then open the output file and print a  list of IP addresses to that fail 3 or more times.
+```
+public static <E extends Comparable<E>>       
+     int binarySearch(E[] a, E x);
+```
+   
+This method should then trigger another helper method that searches the array **recursively** for the value x. Your method should return the index of the element if it's found (you may assume that each element is unique). Return -1 if the element is not found.
 
-A sample command line execution of this file might look like this:
+Hint: start with the iterative code that I presented in lecture 24 (specifically from the file *BinarySearchGeneric*).
 
-```$ java Fail2Ban logs_processed.txt output.txt```
+Finally, create a main method that builds an array of String objects and then sort that array with Arrays.sort.  
 
-The list of IP addresses that have failed 3 or more times should appear in the output.txt file.
+Demonstrate your recursive binarySearch method on this array.
 
-You are provided with an empty *Fail2Ban.java* file to fill in your solution to the assignment.
-
-## Problem 2 - 3 points
-
-In addition to the source files for your programs include a single text file in your codio workspace named readMe.txt with an explanation of what you did for each programming problem. That is, write in plain English, instructions for using your software, explanations for how and why you chose to design your code the way you did. The readMe.txt file is also an opportunity for you to get partial credit when certain requirements of the assignment are not met.
